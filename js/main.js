@@ -12,10 +12,10 @@ function showTime() {
         sec = today.getSeconds();
 
     //Set AM or PM
-    const amPm = hour >= 12 ? 'PM' : 'AM';
+    //const amPm = hour >= 12 ? 'PM' : 'AM';
 
     //12hr Format
-    hour = hour % 12 || 12;
+    //hour = hour % 12 || 12;
 
     //Output Time
     time.innerHTML = addZero(`${hour}`) + `<span>:</span>` + addZero(`${min}`) + `<span>:</span>` + addZero(`${sec}`);
@@ -36,13 +36,15 @@ function setBackgroundAndGreeting(){
     if(hour >= 6 && hour < 12){
         //morning
         document.body.style.backgroundImage = "url('../img/morning.jpg')";
+        greeting.textContent = "Good Morning";
     }else if(hour >= 12 && hour < 18){
         //afternoon
         document.body.style.backgroundImage = "url('../img/afternoon.jpg')";
+        greeting.textContent = "Good Afternoon";
     }else if(hour >= 18 || hour < 6){
         //evening
         document.body.style.backgroundImage = "url('../img/evening.jpg')";
-        document.body.style.color = "white";
+        greeting.textContent = "Good Evening";
     }
 
 }
